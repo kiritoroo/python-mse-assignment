@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import React, { Suspense, useRef, useMemo } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Environment, useGLTF, Html, ContactShadows, OrbitControls } from '@react-three/drei'
+import Loader from './Loader'
 
 import PageContent from './PageContent'
 
@@ -114,32 +115,32 @@ useGLTF.preload("/mac-model.glb");
 
 const MacScene = ({ domContent }) => {
   return (
-    <Canvas camera={{ position: [-10, 0, 12], near: 0.1, far: 100, fov: 45}}>
-      <pointLight position={[10, 10, 10]} intensity={1.5} />
-      <Suspense fallback={null}>
+    <Suspense fallback={<Loader/>}>
+      <Canvas camera={{ position: [-10, 0, 12], near: 0.1, far: 100, fov: 45}}>
+        <pointLight position={[10, 10, 10]} intensity={1.5} />
         <group rotation-y={-0.75}>
           <Model portal={domContent}/>
         </group>
         {/* <Environment files={'/hdr_studio.hdr'}/> */}
         <Environment preset='city'/>
-      </Suspense>
-      <ContactShadows
-        rotation-x={Math.PI / 2}
-        position={[0, -4.5, 0]}
-        opacity={1}
-        width={20}
-        height={20}
-        blur={2}
-        far={4.5}
-      />
-      <OrbitControls
-        enablePan={false}
-        enableRotate={true}
-        enableZoom={false}
-        minPolarAngle={Math.PI / 2}
-        maxPolarAngle={Math.PI / 2}
-      />
-    </Canvas>
+        <ContactShadows
+          rotation-x={Math.PI / 2}
+          position={[0, -4.5, 0]}
+          opacity={1}
+          width={20}
+          height={20}
+          blur={2}
+          far={4.5}
+        />
+        <OrbitControls
+          enablePan={false}
+          enableRotate={true}
+          enableZoom={false}
+          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
+        />
+      </Canvas>
+    </Suspense>
   )
 }
 
