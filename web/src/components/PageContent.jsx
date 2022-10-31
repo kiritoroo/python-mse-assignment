@@ -37,18 +37,18 @@ const PageContent = () => {
             </div>
 
             {/* Example 1 */}
-            <Item title="🥉 Bài tập 1" link="#"/>
+            <Item title="🥉 Bài tập 1" link="https://nbviewer.org/github/kiritoroo/python-mse-assignment/blob/master/example1.ipynb"/>
 
             {/* Example 2 */}
-            <Item title="🥈 Bài tập 2" link="#"/>
+            <Item title="🥈 Bài tập 2" link="https://nbviewer.org/github/kiritoroo/python-mse-assignment/blob/master/example2.ipynb"/>
 
             {/* Example 3 */}
-            <Item title="🥇 Bài tập 3" link="#"/>
+            <Item title="🥇 Bài tập 3" link="https://nbviewer.org/github/kiritoroo/python-mse-assignment/blob/master/example3.ipynb"/>
 
             <div className='py-2'></div>
 
             {/* Example 3 */}
-            <Item title="🏆 Assignment" link="#"/>
+            <Item title="🏆 Assignment" link="https://nbviewer.org/github/kiritoroo/python-mse-assignment/blob/master/assignment.ipynb"/>
 
           </section>
         </div>
